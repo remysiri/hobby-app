@@ -18,6 +18,10 @@
 
 		<main>
 			<div class="container">
+                <?php if($_SESSION["logged"] == true): ?>
+                <p>Logged in as</p>
+                <?php echo $_SESSION["username"]; ?>
+                <?php endif; ?>
 				<?php echo $content; ?>
 			</div>
 		</main>

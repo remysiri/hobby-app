@@ -28,6 +28,14 @@ class UserDAO extends DAO {
         }
     }
 
+    public function getAllPurchaseHistoryByUserId($id) {
+        $sql = "SELECT * FROM user_purchases INNER JOIN events ON user_purchases.product_id = events.id WHERE user_id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue('id', $id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function validate($data) {
         $errors = [];
 

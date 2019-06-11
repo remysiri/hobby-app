@@ -5,22 +5,26 @@ ini_set('display_errors', true);
 error_reporting(E_ALL);
 
 $routes = array(
-  'login' => array(
-    'controller' => 'Auth',
-    'action' => 'login'
-  ),
-  'register' => array(
-    'controller' => 'Auth',
-    'action' => 'register'
-  ),
-  'home' => array(
-    'controller' => 'Home',
-    'action' => 'index'
-  ),
-  'store' => array(
-    'controller' => 'Store',
-    'action' => 'index'
-  )
+    'login' => array(
+        'controller' => 'Auth',
+        'action' => 'login'
+    ),
+    'register' => array(
+        'controller' => 'Auth',
+        'action' => 'register'
+    ),
+    'home' => array(
+        'controller' => 'Home',
+        'action' => 'index'
+    ),
+    'store' => array(
+        'controller' => 'Store',
+        'action' => 'index'
+    ),
+    'history' => array(
+        'controller' => 'User',
+        'action' => 'history'
+    ),
 );
 
 if (empty($_GET['page'])) {
