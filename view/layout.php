@@ -9,20 +9,7 @@
 		<title>Hobby Lobby</title>
 	</head>
 	<body>
-		<header>
-
-		</header>
-
-		<main>
-			<div class="container">
-                <?php if($_SESSION["logged"] == true): ?>
-                <p>Logged in as</p>
-                <?php echo $_SESSION["username"]; ?>
-                <?php endif; ?>
-				<?php echo $content; ?>
-			</div>
-		</main>
-
+    <?php echo $content; ?>
 		<footer>
 		</footer>
 		<script src="js/script.js"></script>

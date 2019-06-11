@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap');
+
+:root {
+    --dark-blue: #7FAFEF;
+    --light-blue: #AECBF5;
+    --brown: #4A241B;
+    --white: #F5F5FD;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -10,9 +19,87 @@ html {
 
 body {
     font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
-    background: url("../assets/img/header.png") no-repeat;
+    margin: 50px;
+    display: grid;
+    justify-items: center;
+    height: 1500px; /* tempt */
+}
+
+.header__container {
+    background: url("../assets/img/header.png");
     width: 100%;
+}
+
+.header__container nav {
+    text-align: right;
+}
+
+.header__container nav li {
+    display: inline-block;
+    margin: 50px 40px;
+}
+
+.header__container nav li:last-child { margin-right: 80px; }
+
+.header__container nav li a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 5px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.header__container .header__heading {
+    padding-left: 30%;
+    padding-top: 10vw;
+}
+.header__container .header__heading h1 {
+    font-size: 5vw;
+    font-weight: 700;
+    color: var(--light-blue);
+}
+
+.header__container .header__event-heading {
+    padding-top: 20vw;
+    text-align: center;
+}
+
+.header__container .header__event-heading h2 {
+     font-size: 3vw;
+     font-weight: 700;
+    color: var(--dark-blue);
+ }
+
+.header__container .header__event-heading p {
+    font-size: 1vw;
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+.header__container .header__event-heading .header__event-button--container {
+    padding-top: 20vw;
+}
+
+.header__container .header__event-heading .header__event-button--container a {
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    background: var(--brown);
+}
+
+main {
+    margin: 150px;
+    display: grid;
+}
+
+.main__introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
