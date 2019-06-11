@@ -10,10 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<div class="banner"></div>
-			<nav class="nav">
-			</nav>
-			</div>
+
 		</header>
 
 		<main>
