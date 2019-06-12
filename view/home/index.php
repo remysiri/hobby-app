@@ -1,17 +1,5 @@
 <header>
     <section class="header__container">
-        <nav>
-            <li><a href="">Calendar</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Store</a></li>
-            <?php if($_SESSION["logged"] == false): ?>
-            <li><a href="">Login</a></li>
-            <?php elseif($_SESSION["logged"] == true): ?>
-            <li><a href="">Logout</a></li>
-            <?php endif; ?>
-        </nav>
-
         <div class="header__heading">
             <h1>Fast.<br>Survive.<br>Reflexes.</h1>
         </div>
@@ -33,7 +21,7 @@
         </div>
         <div class="main__introduction-content">
             <h1>Howdy, let me explain!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio nisl, convallis ut tincidunt at, vehicula in eros. Etiam commodo tincidunt vestibulum. <br>Aenean vestibulum arcu eu quam dapibus, vitae vehicula odio vulputate. Sed massa arcu, blandit quis diam vitae, ultricies vestibulum ligula. Duis sed eleifend risus, eu varius ex.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio nisl, convallis ut tincidunt at, vehicula in eros. Etiam commodo tincidunt vestibulum. <br><br>Aenean vestibulum arcu eu quam dapibus, vitae vehicula odio vulputate. Sed massa arcu, blandit quis diam vitae, ultricies vestibulum ligula. Duis sed eleifend risus, eu varius ex.</p>
         </div>
 
         <div class="main__activities-content">
@@ -42,15 +30,36 @@
         </div>
 
         <div class="main__introduction-calendar">
-            hhhhh
+            <ul>
+                <?php foreach($events as $event): ?>
+                <?php $date = DateTime::createFromFormat('Y-m-d', $event["start_date"]); ?>
+                <li>
+                    <div class="calendar-item">
+                        <div class="calendar__date">
+                            <p class="month"><?php echo strtoupper($date->format('M')); ?></p>
+                            <p class="day"><?php echo strtoupper($date->format('j')); ?></p>
+                        </div>
+
+                        <div class="calendar__circle"></div>
+
+                        <h2 class="calendar__content-title"><?php echo $event["name"]; ?></h2>
+                        <p class="calendar__content-body"><?php echo $event["resume"]; ?></p>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </section>
 
     <section class="main__gallery">
-
+        <div class="itemgallery big">
+            <img src="https://images.pexels.com/photos/1069730/pexels-photo-1069730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
+        </div>
+        <div class="itemgallery small-one">
+            <img src="https://images.pexels.com/photos/2386728/pexels-photo-2386728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
+        </div>
+        <div class="itemgallery small-two">
+            <img src="https://images.pexels.com/photos/2386728/pexels-photo-2386728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
+        </div>
     </section>
-</main>
-
-<main>
-
 </main>

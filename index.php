@@ -25,6 +25,10 @@ $routes = array(
         'controller' => 'User',
         'action' => 'history'
     ),
+    'calendar' => array(
+        'controller' => 'Home',
+        'action' => 'calendar'
+    )
 );
 
 if (empty($_GET['page'])) {

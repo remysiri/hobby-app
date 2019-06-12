@@ -9,9 +9,29 @@
 		<title>Hobby Lobby</title>
 	</head>
 	<body>
-    <?php echo $content; ?>
+        <nav id="nav">
+            <li><a href="index.php?page=calendar">Calendar</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="index.php?page=store">Store</a></li>
+            <?php if(!empty($_SESSION["logged"]) == false): ?>
+                <li><a href="index.php?page=login">Login</a></li>
+            <?php elseif($_SESSION["logged"] == true): ?>
+                <li><a href="index.php?page=logout">Logout</a></li>
+            <?php endif; ?>
+        </nav>
+        <?php echo $content; ?>
 		<footer>
+            <div class="socialmedia"></div>
+            <div class="contact">
+                <h1>Inquiries</h1>
+                <p class="info">Troubled with questions? <br>No worries we'll answer them for you</p>
+                <p><span>Phone: </span> +32 (0) 56 30 85 78</p>
+                <p><span>Email: </span> unionname@contact.me</p>
+            </div>
 		</footer>
+
+        <p class="copy-footer">2019 UnionName  -  Privacy Policy  |  Cookie Policy  |  Terms & Conditions</p>
 		<script src="js/script.js"></script>
 	</body>
 </html>
