@@ -28,6 +28,10 @@ $routes = array(
     'calendar' => array(
         'controller' => 'Home',
         'action' => 'calendar'
+    ),
+    'contact' => array(
+        'controller' => 'Home',
+        'action' => 'contact'
     )
 );
 

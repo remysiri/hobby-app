@@ -36,6 +36,55 @@ class UserDAO extends DAO {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function sendMessage($data) {
+        $errors = $this->validateForm($data);
+        if(empty($errors)) {
+            $sql = "INSERT INTO `messages` (`firstname`, `lastname`, `email`, `phone`, `subject`, `body`) VALUES (:firstname, :lastname, :email, :phone, :subject, :body)";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue("firstname", $data["firstname"]);
+            $stmt->bindValue("lastname", $data["lastname"]);
+            $stmt->bindValue("email", $data["email"]);
+            $stmt->bindValue("phone", $data["phone"]);
+            $stmt->bindValue("subject", $data["subject"]);
+            $stmt->bindValue("body", $data["body"]);
+            $stmt->execute();
+        }
+    }
+
+    public function validateForm($data) {
+        $errors = [];
+
+        if(!empty($_POST["submit"])) {
+            if($_POST["submit"] == "submitform") {
+                if(empty($data["firstname"])) {
+                    $errors["firstname"] = "Firstname required";
+                }
+
+                if(empty($data["lastname"])) {
+                    $errors["lastname"] = "Lastname required";
+                }
+
+                if(!filter_var($data["email"], FILTER_VALIDATE_EMAIL)) {
+                    $errors["email"] = "Email is not valid";
+                }
+
+                if(!preg_match("/^[0-9]*$/", $data["phone"])) {
+                    $errors["phone"] = "Phone number is not valid";
+                }
+
+                if(empty($data["subject"])) {
+                    $errors["subject"] = "Subject required";
+                }
+
+                if(empty($data["body"])) {
+                    $errors["body"] = "Message required";
+                }
+            }
+        }
+
+        return $errors;
+    }
+
     public function validate($data) {
         $errors = [];
 

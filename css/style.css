@@ -41,6 +41,11 @@ nav {
     right: 0;
 }
 
+.colornav {
+    position: relative;
+    text-align: right;
+}
+
 .navstick {
     position: fixed;
     top: 0;
@@ -53,6 +58,7 @@ nav {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+    z-index: 99999999;
 }
 
 .navstick li {
@@ -63,9 +69,17 @@ nav {
     color: var(--dark-blue);
 }
 
+.colornav li a {
+    color: var(--dark-blue);
+}
+
 nav li {
     display: inline-block;
     margin: 50px 40px;
+}
+
+nav li .active {
+    border-bottom: 1px solid var(--light-blue);
 }
 
 nav li:last-child { margin-right: 80px; }
@@ -288,4 +302,131 @@ footer .contact p {
     display: block;
     text-align: center;
     margin: 20px;
+}
+
+.full__calendar {
+    margin: 75px;
+    position: relative;
+}
+
+.full__calendar ul::before {
+    content: "";
+    display: block;
+    border-left: 4px solid var(--dark-blue);
+    height: 100%;
+    position: absolute;
+}
+
+.full__calendar li {
+    margin: 20px 60px;
+}
+
+.full__calendar li .calendar-item {
+    position: relative;
+}
+
+.full__calendar .calendar__circle {
+    height: 10px;
+    width: 10px;
+    background: var(--white);
+    border: 3px solid var(--dark-blue);
+    border-radius: 50%;
+    position: absolute;
+    left: -65px;
+}
+
+.main__contact {
+    display: grid;
+    justify-items: center;
+}
+
+.main__contact-container {
+    width: 500px;
+}
+
+.main__contact h1 {
+    font-size: 1.5vw;
+}
+
+.main__contact form {
+    margin: 75px 0;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+.form-group label {
+    font-weight: 700;
+}
+input, select, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 3px;
+    color: var(--dark-blue);
+    border-radius: 3px;
+    border: 1px solid var(--light-blue);
+    font-size: 1.8rem;
+}
+
+.main__contact textarea {
+    height: 200px;
+}
+
+.form-info {
+    font-size: 1.2rem;
+}
+
+.form-submit {
+    background: white;
+    color: var(--dark-blue);
+    font-weight: 700;
+    font-size: 1.8rem;
+    border: 1px solid var(--light-blue);
+    padding: 5px 15px;
+    border-radius: 3px;
+}
+
+.form-submit:hover {
+    cursor: pointer;
+}
+
+.big__container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 75px 0;
+}
+
+.big__container .member {
+    font-size: 1.1vw;
+    font-weight: 700;
+}
+
+.store__container {
+    max-width: 1000px;
+    margin: 75px 0
+}
+
+.store__container .storethreecolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.package__container {
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid var(--light-blue);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.package__container h1 {
+    font-size: 1.6vw;
+}
+
+.package__container ul li {
+    text-align: center;
 }
