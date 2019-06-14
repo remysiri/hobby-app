@@ -216,6 +216,11 @@ h1::after {
     z-index: 9999;
 }
 
+.main__introduction-calendar .calendar-item .calendar__content-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .main__gallery {
     display: grid;
     grid-template-columns: 31% 31% 35%;
@@ -414,12 +419,16 @@ input, select, textarea {
     grid-gap: 20px;
 }
 
+.store__container .onecolumn {
+    position: relative;
+}
+
 .package__container {
     align-items: center;
     justify-content: center;
     background: white;
     border: 1px solid var(--light-blue);
-    padding: 10px;
+    padding: 8px;
     border-radius: 4px;
 }
 
@@ -429,4 +438,87 @@ input, select, textarea {
 
 .package__container ul li {
     text-align: center;
+    margin: 20px 0;
+}
+
+.cart {
+    background: white;
+    border: 1px solid var(--light-blue);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.cart .cart-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.table-header {
+    font-weight: 700;
+}
+
+.cart .cart-table-row {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1 / -1;
+    align-items: center;
+}
+
+.last {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.cart .cell input {
+    width: 50px;
+}
+
+.button-container {
+    float: right;
+}
+
+.store-button {
+    background: white;
+    border: 1px solid var(--dark-blue);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--dark-blue);
+    padding: 8px 15px;
+    text-align: right;
+    margin: 20px 0;
+}
+
+.store-button:hover {
+    cursor: pointer;
+}
+
+.purchase-history {
+    background: white;
+    border: 1px solid var(--light-blue);
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+.history--table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.history-table-row {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 1 / -1;
+    align-items: center;
+}
+
+.centerbtn {
+    display: block;
+    margin: 0 auto;
 }

@@ -12,12 +12,21 @@ class StoreDAO extends DAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function purchase($data) {
-        $sql = "INSERT INTO `user_purchases` (`user_id`,`product_id`,`package_type`, `active`, `purchase_end`) VALUES (:user_id, :product_id, :package_type, :active, :purchase_end)";
+    public function getMatchingUser($email) {
+        $sql = "SELECT id FROM users WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue('user_id', $data['user_id']);
+        $stmt->bindValue('email', $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function purchase($data) {
+        $sql = "INSERT INTO `user_purchases` (`user_id`,`product_id`,`package_type`, `quantity`, `active`, `purchase_end`) VALUES (:user_id, :product_id, :package_type, :quantity, :active, :purchase_end)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue('user_id', $_SESSION["package_userid"]);
         $stmt->bindValue('product_id', $data['product_id']);
         $stmt->bindValue('package_type', $data['package']);
+        $stmt->bindValue('quantity', $data['quantity']);
         $stmt->bindValue('active', 1);
         $stmt->bindValue('purchase_end', $data['expire']);
         $stmt->execute();

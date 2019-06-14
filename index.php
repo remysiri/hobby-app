@@ -21,6 +21,10 @@ $routes = array(
         'controller' => 'Store',
         'action' => 'index'
     ),
+    'checkout' => array(
+        'controller' => 'Store',
+        'action' => 'checkout'
+    ),
     'history' => array(
         'controller' => 'User',
         'action' => 'history'
@@ -32,6 +36,10 @@ $routes = array(
     'contact' => array(
         'controller' => 'Home',
         'action' => 'contact'
+    ),
+    'logout' => array(
+        'controller' => 'Auth',
+        'action' => 'logout'
     )
 );
 

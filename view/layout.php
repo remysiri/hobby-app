@@ -16,6 +16,7 @@
             <li><a class="<?php if($_GET["page"] == "store") { echo "active"; } ?>" href="index.php?page=store">Store</a></li>
             <?php if(!empty($_SESSION["logged"]) == false): ?>
                 <li><a href="index.php?page=login">Login</a></li>
+                <li><a href="index.php?page=register">Register</a></li>
             <?php elseif($_SESSION["logged"] == true): ?>
                 <li><a href="index.php?page=logout">Logout</a></li>
             <?php endif; ?>

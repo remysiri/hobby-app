@@ -10,7 +10,7 @@ class UserController extends Controller{
     }
 
     public function history() {
-        $getPurchaseHistory = $this->userDAO->getAllPurchaseHistoryByUserId($_SESSION["id"]);
+        $getPurchaseHistory = $this->userDAO->getAllPurchaseHistoryByUserId($_SESSION["auth"]["id"]);
 
         $this->set('history', $getPurchaseHistory);
     }

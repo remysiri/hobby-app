@@ -19,13 +19,23 @@ class UserDAO extends DAO {
         $errors = $this->validate($data);
         $hashedpw = password_hash($data['password'], PASSWORD_DEFAULT);
         if(empty($errors)) {
-            $sql = "INSERT INTO `users` (`username`,`password`,`email`) VALUES (:username, :password, :email)";
+            $sql = "INSERT INTO `users` (`username`,`password`,`email`, `firstname`, `lastname`) VALUES (:username, :password, :email, :firstname, :lastname)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue('username', $data['username']);
             $stmt->bindValue('password', $hashedpw);
             $stmt->bindValue('email', $data['email']);
+            $stmt->bindValue('firstname', $data["firstname"]);
+            $stmt->bindValue('lastname', $data["lastname"]);
             $stmt->execute();
         }
+    }
+
+    public function getMatchingUser($data) {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue("email", $data);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getAllPurchaseHistoryByUserId($id) {
@@ -104,7 +114,7 @@ class UserDAO extends DAO {
                 }
             }
 
-            if($_POST["action"] == "register") {
+            if($_POST["action"] == "register" || $_POST["action"] == "checkout") {
                 if($result["username"] == $data["username"]) {
                     $errors["username"] = "Username already taken.";
                 } else if (empty($data["username"])) {
@@ -131,6 +141,14 @@ class UserDAO extends DAO {
                     }
                 } else if (empty($data["confirm-password"])) {
                     $errors["confirm-password"] = "Password confirmation is required.";
+                }
+
+                if(empty($data["firstname"])) {
+                    $errors["firstname"] = "Firstname required";
+                }
+
+                if(empty($data["lastname"])) {
+                    $errors["lastname"] = "Lastname required";
                 }
             }
         }

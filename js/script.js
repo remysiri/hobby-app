@@ -3,7 +3,7 @@
     var navigation = document.getElementById("nav");
     var stick = navigation.offsetTop;
 
-    if(window.pageYOffset >= stick + 20) {
+    if(window.pageYOffset >= stick + 5) {
       navigation.classList.add("navstick");
     } else {
       navigation.classList.remove("navstick");
