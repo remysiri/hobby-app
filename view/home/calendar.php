@@ -2,24 +2,29 @@
 <main>
 
     <div class="filter">
-        <form action="index.php?page=calendar" method="POST">
-            <input type="text" name="keyword" placeholder="Keyword"/>
-            <input type="date" name="date" placeholder="YYYY-MM-DD"/>
-            <select name="category">
-                <option value="">None</option>
-                <option value="duel">Duel</option>
-                <option value="trip">Trip</option>
-                <option value="camp">Camp</option>
-                <option value="horserace">Horserace</option>
-                <option value="war">War</option>
-                <option value="tournament">Tournament</option>
-            </select>
+        <h1>Filter By</h1>
+        <div class="filter__container">
+            <form id="filterform" action="index.php?page=calendar" method="POST">
+                <input type="text" name="keyword" id="keyword" placeholder="Keyword"/>
+                <input type="date" name="date" id="filterdate" placeholder="YYYY-MM-DD"/>
+                <select name="category" id="categoryfilter">
+                    <option value="">None</option>
+                    <option value="duel">Duel</option>
+                    <option value="shooting">Shooting</option>
+                    <option value="learning">Learning</option>
+                    <option value="show-off">Show-off</option>
+                    <option value="trip">Trip</option>
+                    <option value="roleplay">Roleplay</option>
+                    <option value="tournament">Tournament</option>
+                </select>
 
-            <button type="submit">Go</button>
-        </form>
+                <button class="calendar-btn" type="submit">Filter</button>
+            </form>
+        </div>
     </div>
 
     <div class="full__calendar">
+        <h1>Calendar</h1>
         <ul>
             <?php foreach($events as $event): ?>
                 <?php $date = DateTime::createFromFormat('Y-m-d', $event["start_date"]); ?>

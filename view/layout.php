@@ -23,7 +23,19 @@
         </nav>
         <?php echo $content; ?>
 		<footer>
-            <div class="socialmedia"></div>
+            <div class="socialmedia">
+                <div class="twitter">
+                    <img src="assets/icons/tw.png"/>
+                </div>
+
+                <div class="facebook">
+                    <img src="assets/icons/fb.png"/>
+                </div>
+
+                <div class="instagram">
+                    <img src="assets/icons/inst.png"/>
+                </div>
+            </div>
             <div class="contact">
                 <h1>Inquiries</h1>
                 <p class="info">Troubled with questions? <br>No worries we'll answer them for you</p>

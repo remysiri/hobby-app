@@ -21,12 +21,13 @@
         </div>
         <div class="main__introduction-content">
             <h1>Howdy, let me explain!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio nisl, convallis ut tincidunt at, vehicula in eros. Etiam commodo tincidunt vestibulum. <br><br>Aenean vestibulum arcu eu quam dapibus, vitae vehicula odio vulputate. Sed massa arcu, blandit quis diam vitae, ultricies vestibulum ligula. Duis sed eleifend risus, eu varius ex.</p>
+            <p>Old Town Gunslingers Association is for people on search for a past-time and relaxing activities that would bring them back to the Old Western era 1880.<br><br> With us you would experience the kind of life they were experiencing and also be learning about roleplay which is portraying a character and acting as one, everything from gunfights to horse racing is possible and comes once in a while in the activities so check them often and keep yourself up to date!
+            </p>
         </div>
 
         <div class="main__activities-content">
-            <h1>Howdy, let me explain!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio nisl, convallis ut tincidunt at, vehicula in eros. Etiam commodo tincidunt vestibulum. <br>Aenean vestibulum arcu eu quam dapibus, vitae vehicula odio vulputate. Sed massa arcu, blandit quis diam vitae, ultricies vestibulum ligula. Duis sed eleifend risus, eu varius ex.</p>
+            <h1>Activities</h1>
+            <p>To keep life entertaining we offer different kinds of activities for you, for those of us who likes to roleplay a lot more, ask and you shall recieve, for those of us who like to enjoy gunfights lots more or even stare out gundrawing duels we got these, we can offer up to everything till horse riding and so on.</p>
         </div>
 
         <div class="main__introduction-calendar">
@@ -56,7 +57,7 @@
             <img src="https://images.pexels.com/photos/1069730/pexels-photo-1069730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
         </div>
         <div class="itemgallery small-one">
-            <img src="https://images.pexels.com/photos/2386728/pexels-photo-2386728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
+            <img src="https://1.bp.blogspot.com/-Fh9nRSQJs44/T3uJprwpMaI/AAAAAAAAAJw/j07mJK35q7I/s400/thomas_SAA.jpg"/>
         </div>
         <div class="itemgallery small-two">
             <img src="https://images.pexels.com/photos/2386728/pexels-photo-2386728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>

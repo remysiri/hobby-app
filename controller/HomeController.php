@@ -40,6 +40,11 @@ class HomeController extends Controller{
       //$date = DateTime::createFromFormat('Y/m/d', '2013/12/10');
 
       $this->set('events', $events);
+
+      if($_SERVER["HTTP_ACCEPT"] == "application/json") {
+          echo json_encode($events);
+          exit();
+      }
   }
 
   public function contact() {

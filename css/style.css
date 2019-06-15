@@ -171,8 +171,12 @@ h1::after {
     position: relative;
 }
 
+.main__introduction-calendar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .main__introduction-calendar li {
-    display: inline-block;
     margin: 0 10px;
 }
 
@@ -272,8 +276,9 @@ footer {
 }
 
 footer .socialmedia {
-    border: 1px solid red;
-    height: 200px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 footer .contact {
@@ -303,10 +308,30 @@ footer .contact p {
     font-size: 2rem;
 }
 
+
 .copy-footer {
     display: block;
     text-align: center;
     margin: 20px;
+}
+
+.filter__container {
+    max-width: 500px;
+}
+
+.filter__container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.filter__container .calendar-btn {
+    background: white;
+    border: 1px solid var(--dark-blue);
+    border-radius: 4px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    padding: 4px 10px;
 }
 
 .full__calendar {
