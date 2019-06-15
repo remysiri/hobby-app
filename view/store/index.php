@@ -1,6 +1,6 @@
 <div class="big__container">
     <?php if(!empty($_SESSION["logged"]) == false): ?>
-    <p class="member">Already have an account or bought a ticket? Click <a href="index.php?page=login">here</a> to login.</p>
+        <p class="member">Already have an account or bought a ticket? Click <a href="index.php?page=login">here</a> to login.</p>
     <?php endif; ?>
     <div class="store__container">
         <?php if(empty($_POST)): ?>
