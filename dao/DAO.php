@@ -3,10 +3,10 @@
 class DAO {
 
   // Properties
-  private static $dbHost = "localhost";
-	private static $dbName = "int2_hobbylobby";
-	private static $dbUser = "root";
-	private static $dbPass = "";
+  private static $dbHost = "ID282238_hobbylobby.db.webhosting.be";
+	private static $dbName = "ID282238_hobbylobby";
+	private static $dbUser = "ID282238_hobbylobby";
+	private static $dbPass = "integration2";
 	private static $sharedPDO;
 	protected $pdo;
 

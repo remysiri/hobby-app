@@ -9,7 +9,7 @@
             <p>Find out at our yearly tournament</p>
 
             <div class="header__event-button--container">
-                <a href="">Buy tickets</a>
+                <a href="index.php?page=store">Buy tickets</a>
             </div>
         </div>
     </section>

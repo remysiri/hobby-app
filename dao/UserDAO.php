@@ -9,7 +9,7 @@ class UserDAO extends DAO {
         if(empty($errors)) {
             $sql = "SELECT * FROM users WHERE username = :username";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue("username", $data["username"]);
+            $stmt->bindValue("username", strtolower($data["username"]));
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
@@ -21,7 +21,7 @@ class UserDAO extends DAO {
         if(empty($errors)) {
             $sql = "INSERT INTO `users` (`username`,`password`,`email`, `firstname`, `lastname`) VALUES (:username, :password, :email, :firstname, :lastname)";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue('username', $data['username']);
+            $stmt->bindValue('username', strtolower($data['username']));
             $stmt->bindValue('password', $hashedpw);
             $stmt->bindValue('email', $data['email']);
             $stmt->bindValue('firstname', $data["firstname"]);
@@ -106,7 +106,7 @@ class UserDAO extends DAO {
 
         if(!empty($_POST["action"])) {
             if($_POST["action"] == "login") {
-                if($result["username"] !== $data["username"]) {
+                if($result["username"] !== strtolower($data["username"])) {
                     $errors["username"] = "Username does not exists";
                 }
                 if (!password_verify($data["password"], $result["password"])) {
@@ -115,7 +115,7 @@ class UserDAO extends DAO {
             }
 
             if($_POST["action"] == "register" || $_POST["action"] == "checkout") {
-                if($result["username"] == $data["username"]) {
+                if($result["username"] == strtolower($data["username"])) {
                     $errors["username"] = "Username already taken.";
                 } else if (empty($data["username"])) {
                     $errors["username"] = "Username required";

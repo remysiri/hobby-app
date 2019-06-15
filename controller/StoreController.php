@@ -39,8 +39,9 @@ class StoreController extends Controller{
             }
 
             if($_POST["action"] == "checkout") {
-                $matchingUserId = $this->storeDAO->getMatchingUser($_POST["email"]);
-                $this->userDAO->register($_POST);
+                if(!empty($_SESSION["logged"]) == false) {
+                    $this->userDAO->register($_POST);
+                }
 
                 $_SESSION["package_firstname"] = $_POST["firstname"];
                 $_SESSION["package_lastname"] = $_POST["lastname"];
